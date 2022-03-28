@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4185fa17d58166048b8d2e8188fbf1c5, type: 3}
+  m_Name: LightGreenTree
+  m_EditorClassIdentifier: 
+  typeName: Tree 1
+  materials:
+  - {fileID: 2100000, guid: a9a944951e9e64e4c8bc00420ec40681, type: 2}
+  - {fileID: 2100000, guid: 207a86635b3bbd246a2bae373c8a21de, type: 2}

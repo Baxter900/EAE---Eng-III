@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3703d938000d4ad44998da60475b0f63, type: 3}
+  m_Name: BossStunnedState Second Round
+  m_EditorClassIdentifier: 
+  stunnedDuration: 5
+  bossStage: 6
+  desiredHeight: 1
+  descendSpeed: 6
+  closeEnough: 1
+  damageTags:
+  - frost
+  stunnedMaterial: {fileID: 2100000, guid: 3d9914e92c1db3f4caed885c92e0b7e9, type: 2}
+  normalMaterial: {fileID: -4846571324314219208, guid: fb7f86dac4465c04b8df4253d07fd62b, type: 3}
+  stunnedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unstunnedEvent:
+    m_PersistentCalls:
+      m_Calls: []

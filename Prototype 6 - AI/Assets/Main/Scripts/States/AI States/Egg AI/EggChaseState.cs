@@ -14,11 +14,17 @@ public class EggChaseState : AIState{
 
     public float chaseBaseMoveSpeed = 11f;
 
+    public bool canLeaveChase = true;
+
     public override void OnEnter(AIDriver driver){
         driver.characterDriver.baseMoveSpeed = chaseBaseMoveSpeed;
     }
 
     public override void OnUpdate(AIDriver driver){
+        if(driver.blackboard.targetEnemy == null){
+            return;
+        }
+
         // False = return to original position
         // True = go to target position
         Vector3 moveToLocation = driver.blackboard.targetEnemy.position;
@@ -31,10 +37,12 @@ public class EggChaseState : AIState{
             Debug.Log("boom");
         }
 
-        driver.blackboard.genericTime -= Time.deltaTime;
-        if(driver.blackboard.genericTime <= 0f){
-            driver.blackboard.genericTime = detectInterval + Random.Range(-detectIntervalVariance, detectIntervalVariance);
-            driver.blackboard.targetEnemy = SweepForEnemyDetection(driver, detectedTag);
+        if(canLeaveChase){
+            driver.blackboard.genericTime -= Time.deltaTime;
+            if(driver.blackboard.genericTime <= 0f){
+                driver.blackboard.genericTime = detectInterval + Random.Range(-detectIntervalVariance, detectIntervalVariance);
+                driver.blackboard.targetEnemy = SweepForEnemyDetection(driver, detectedTag);
+            }
         }
 
     }

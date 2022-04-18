@@ -9,16 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d517a19ba338dc340b4c3ca9a77c2e8b, type: 3}
-  m_Name: EggPatrolState
+  m_Script: {fileID: 11500000, guid: d4e2a1c641dcafd48bf3833f691ed71e, type: 3}
+  m_Name: BossIdleState
   m_EditorClassIdentifier: 
-  patrolDistance: 10
-  patrolCloseDistance: 1
-  detectRange: 30
-  detectInterval: 1
-  detectIntervalVariance: 0.3
+  detectRange: 150
+  detectInterval: 0.3
   detectableLayers:
     serializedVersion: 2
     m_Bits: 8
   detectedTag: Player
-  patrolBaseMovespeed: 6
+  playerDetected:
+    m_PersistentCalls:
+      m_Calls: []

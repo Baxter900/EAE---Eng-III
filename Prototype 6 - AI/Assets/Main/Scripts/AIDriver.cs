@@ -11,6 +11,10 @@ public class AIBlackboard{
 
     public Dictionary<string, float> genericFloats;
     public Dictionary<string, bool> genericBools;
+    public Dictionary<string, int> genericInts;
+
+    public List<GameObject> tempCreatedObjects;
+    public HashSet<GameObject> objectsToDelete;
 
     public Vector3 originalLocation;
     public Vector3 desiredLocation;
@@ -20,6 +24,10 @@ public class AIBlackboard{
     public void Init(){
         genericFloats = new Dictionary<string, float>();
         genericBools = new Dictionary<string, bool>();
+        genericInts = new Dictionary<string, int>();
+
+        tempCreatedObjects = new List<GameObject>();
+        objectsToDelete = new HashSet<GameObject>();
     }
 }
 
@@ -44,7 +52,7 @@ public class AIDriver : MonoBehaviour{
 
     void Start(){
         blackboard.Init();
-        
+
         activeState = defaultState;
         activeState.OnEnter(this);
 

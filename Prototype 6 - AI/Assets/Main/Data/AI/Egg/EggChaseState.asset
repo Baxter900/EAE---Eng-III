@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe2e5e18375ed54581a0536867cd393, type: 3}
   m_Name: EggChaseState
   m_EditorClassIdentifier: 
-  detectRange: 20
+  detectRange: 30
   detectInterval: 0.1
   detectIntervalVariance: 0
   detectableLayers:
@@ -21,3 +21,4 @@ MonoBehaviour:
   detectedTag: Player
   rangeToExplodeAt: 3
   chaseBaseMoveSpeed: 12
+  canLeaveChase: 1

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using UnityEngine.Events;
+
+public class HealthChangeEvent : UnityEvent<float, float>{}
 
 public class Health : MonoBehaviour{
     [SerializeField]
@@ -18,6 +21,10 @@ public class Health : MonoBehaviour{
     private Vector3 relativeDeathAnimVelocity = Vector3.up + Vector3.back + Vector3.right;
     [SerializeField]
     private Vector3 relativeDeathAnimAngularVelocity = Vector3.zero;
+
+    public HealthChangeEvent healthEvent = new HealthChangeEvent();
+
+    public UnityEvent deathEvent = new UnityEvent();
 
     [SerializeField] [ReadOnly] [HideInEditorMode]
     private float currentHP;
@@ -49,12 +56,18 @@ public class Health : MonoBehaviour{
         }
     }
 
+    public void SetTags(string[] damageTags){
+        tagWhichAllowDamage = damageTags;
+    }
+
     private void Damage(float amount){
         if(!isAlive){
             return;
         }
 
         currentHP -= amount;
+
+        healthEvent.Invoke(currentHP, maxHP);
 
         if(currentHP <= 0f){
             Die();
@@ -63,6 +76,7 @@ public class Health : MonoBehaviour{
 
     private void Die(){
         isAlive = false;
+        deathEvent.Invoke();
         DeathAnim(deathAnimDuration);
     }
 

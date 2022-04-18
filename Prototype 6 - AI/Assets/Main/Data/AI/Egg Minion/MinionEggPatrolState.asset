@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d517a19ba338dc340b4c3ca9a77c2e8b, type: 3}
-  m_Name: EggPatrolState
+  m_Name: MinionEggPatrolState
   m_EditorClassIdentifier: 
   patrolDistance: 10
   patrolCloseDistance: 1
-  detectRange: 30
+  detectRange: 99999
   detectInterval: 1
   detectIntervalVariance: 0.3
   detectableLayers:
